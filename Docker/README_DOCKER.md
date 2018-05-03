@@ -40,3 +40,11 @@ vim /etc/docker/daemon.json 编辑，去掉","或者直接如下覆盖
     ]}
 
 $ systemctl restart docker
+
+## docker常用命令
+
+$ docker ps  查看启动的docker
+
+$ docker ps -a  查看所有的docker，包括启动的和未启动的
+
+$ docker exec -it [启动的docker id] /bin/bash  进入Docker容器
