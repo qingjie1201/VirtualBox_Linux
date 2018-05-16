@@ -227,22 +227,11 @@ $ /root/java-develop/project/install.sh  安装
 
 $ chmod a+x build.sh
 $ /root/java-develop/project/build.sh  更新并安装
-```
 
-### 7.add openjpa maven jar
-```
+如果缺包，常用执行命令
+add openjpa maven jar
 $ mvn install:install-file -Dfile=./openjpa-2.4.0.Release.jar -DgroupId=org.apache.openjpa -DartifactId=openjpa -Dversion=2.4.0.Release -Dpackaging=jar
 $ mvn install:install-file -Dfile=./openjpa-2.4.0.Release.pom -DgroupId=org.apache.openjpa -DartifactId=openjpa -Dversion=2.4.0.Release -Dpackaging=pom
-```
-
-### 8.添加防火墙规则
-```
-$ firewall-cmd --zone=public --add-port=80/tcp --permanent
-  命令含义：
-  --zone #作用域
-  --add-port=80/tcp 添加端口，格式为：端口/通讯协议
-  --permanent 永久生效，没有此参数重启后失效
-$ systemctl restart firewalld
 ```
 
 ## 前台的安装
