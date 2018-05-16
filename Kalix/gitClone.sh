@@ -1,0 +1,10 @@
+git clone https://github.com/chenyanxu/kalix-parent.git
+git clone https://github.com/chenyanxu/framework-parent.git
+git clone https://github.com/chenyanxu/admin-parent.git
+git clone https://github.com/chenyanxu/middleware-parent.git
+git clone https://github.com/chenyanxu/oa-parent.git
+git clone https://github.com/chenyanxu/common-parent.git
+git clone https://github.com/chenyanxu/schedule-parent.git
+git clone https://github.com/chenyanxu/tools-parent.git
+git clone https://github.com/chenyanxu/research-parent.git
+git clone https://github.com/chenyanxu/art-parent.git

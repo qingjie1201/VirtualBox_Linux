@@ -255,6 +255,7 @@ $ git pull origin master
 ```
 
 安装
+参考：https://blog.csdn.net/marksinoberg/article/details/77816991
 ```
 修改文件如下：
 kalix-vue-project/src/config/global.toml
@@ -280,5 +281,14 @@ $ cd /usr/share/nginx
 $ mv dist/ vue-mobile-art/
 
 配置nginx，/etc/nginx/conf.d/
-复制或替换default.conf 到 /etc/nginx/conf.d/default.conf
+复制kalix-vue-project.conf和vue-mobile-art 到 /etc/nginx/conf.d/
+
+$ nginx -t -c /etc/nginx/nginx.conf  判断Nginx配置是否正确
+$ nginx -t  判断Nginx配置是否正确
+$ ps -ef | grep nginx  查询nginx主进程号
+$ pkill -9 nginx  强制停止Nginx
+$ /usr/sbin/nginx  启动Nginx
+$ nginx 启动Nginx
+$ nginx -c /etc/nginx/nginx.conf 启动Nginx
+$ nginx -s reload  平滑重启命令
 ```
