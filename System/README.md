@@ -25,17 +25,17 @@ SshClient
 ## 系统设置
 
 ### 设置网络：VirtualBox网络设置桥接
-
+```
 $ vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
 
 $ i 修改文件,新增或修改如下
 
-    BOOTPROTO=static/dhcp/none
-   	IPADDR=192.168.0.21
-   	NETMASK=255.255.255.0
-   	GETEWAY=192.168.0.1
-   	DNS1=8.8.8.8
-   	ONBOOT=yes
+  BOOTPROTO=static/dhcp/none
+  IPADDR=192.168.0.21
+  NETMASK=255.255.255.0
+  GETEWAY=192.168.0.1
+  DNS1=8.8.8.8
+  ONBOOT=yes
 
 $ esc 退出
 
@@ -48,9 +48,10 @@ $ systemctl restart network 重启网络配置
 $ ping ip/baidu.com
 
 $ yum update 更新系统
+```
 
 ### 设置系统时区、时间
-
+```
 $ date 查看系统当前时间
 
 $ yum install ntp -y
@@ -64,9 +65,10 @@ $ tzselect 查看，提示 修改/etc/sysconfig/clock    ZONE=Asia/Shanghai
 $ rm /etc/localtime
 
 $ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 链接到上海时区文件
+```
 
 ### 常用软件安装
-
+```
 $ yum install vim -y	安装vim
 
 $ yum install wget -y
@@ -76,9 +78,10 @@ $ yum install nmap -y
 $ yum install git -y
 
 $ yum install net-tools -y
+```
 
 ### 设置hostname
-
+```
 $ uname -a  查看hostname
 
 $ hostname  查看hostname
@@ -90,11 +93,13 @@ $ vi /etc/hostname 修改newname(如examples.com)
 $ vi /etc/hosts  修改原hostname为newname
 
 $ vi /etc/sysconfig/network  修改原hostname为newname(可能无此文件)
+```
 
 ### 关闭防火墙
-
+```
 $ systemctl stop firewalld
 
 $ systemctl disable firewalld
 
 $ reboot 重启
+```
