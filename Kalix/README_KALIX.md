@@ -134,7 +134,37 @@ $ systemctl restart postgresql-9.5.service  修改配置后需要重启
 couchdb
 参考：http://docs.couchdb.org/en/2.1.1/install/unix.html#installation-using-the-apache-couchdb-convenience-binary-packages
 ```
+$ systemctl status couchdb  查看couchdb服务
+$ vim /etc/yum.repos.d/bintray-apache-couchdb-rpm.repo  创建文件，为安装couchdb提供仓库地址
+$ i
 
+[bintray--apache-couchdb-rpm]
+name=bintray--apache-couchdb-rpm
+baseurl=http://apache.bintray.com/couchdb-rpm/el$releasever/$basearch/
+gpgcheck=0
+repo_gpgcheck=0
+enabled=1
+
+$ esc
+$ :wq
+$ cat /etc/yum.repos.d/bintray-apache-couchdb-rpm.repo
+$ yum install -y couchdb  安装couchdb
+$ systemctl start couchdb  启动couchdb服务
+$ netstat -lntp | grep 5984
+$ curl http://127.0.0.1:5984
+$ curl http://127.0.0.1:5984/_utils/
+$ curl -I http://0.0.0.0:5984/_utils/index.html  检查couchdb是否正常工作
+
+配置couchdb
+$ cat /opt/couchdb/etc/local.ini
+$ vim /opt/couchdb/etc/local.ini
+  [chttpd]
+  bind_address = 192.168.0.227
+  [admins]
+  admin = 123456
+$ systemctl restart couchdb
+$ systemctl status couchdb
+$ curl -I http://192.168.0.227:5984/_utils/index.html
 ```
 
 ### 5.下载安装karaf4.1.2
@@ -254,8 +284,7 @@ $ cd /root/vue-project/vue-mobile-art
 $ git pull origin master
 ```
 
-安装
-参考：https://blog.csdn.net/marksinoberg/article/details/77816991
+安装项目配置nginx，参考：https://blog.csdn.net/marksinoberg/article/details/77816991
 ```
 修改文件如下：
 kalix-vue-project/src/config/global.toml
@@ -291,4 +320,5 @@ $ /usr/sbin/nginx  启动Nginx
 $ nginx 启动Nginx
 $ nginx -c /etc/nginx/nginx.conf 启动Nginx
 $ nginx -s reload  平滑重启命令
+$ nginx -s stop  停止Nginx
 ```
