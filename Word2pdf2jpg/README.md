@@ -76,6 +76,8 @@ maven pom.xml
 
 ## jodconverter + openOffice
 
+openOffice在线下载地址：https://www.openoffice.org/download/
+
 ### windows环境
 
 安装openOffice 本机：jodconverter\Apache_OpenOffice_4.1.5_Win_x86_install_zh-CN.exe
@@ -197,3 +199,7 @@ $ cd /home/jeesite/WEB-INF/classes
 $ java -classpath . cn/boltit/s421/common/utils/JodconverterUtil
 $ java -classpath ".:/home/jeesite/WEB-INF/lib/*" cn/boltit/s421/common/utils/JodconverterUtil
 ```
+
+解决linux下，转换pdf字体不全问题，缺少字体库，拷贝windows下字体库到openOffice里
+
+copy C:\Windows\Fonts to /opt/openoffice4/share/fonts/truetype
